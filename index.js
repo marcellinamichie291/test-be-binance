@@ -32,14 +32,14 @@ async function main(){
     const change = tranformMax/tranformMin
 
     const lastPrice = parseFloat(bPrice[bPrice.length - 1].close)
-    // console.log('lastPrice:',lastPrice)
-    // console.log('%', change -1 >= 1)
-    // console.log("Short", ((tranformMin/lastPrice)-1)>=0.1)
-    // console.log("Long",((lastPrice/tranformMin)-1)>=0.1)
-    if((change-1) >= 1){
-        if(((tranformMax/lastPrice)-1) >= 0.1){
+    console.log('lastPrice:',lastPrice)
+    // console.log('%', (change -1)*100 >= 1)
+    // console.log("Short", ((tranformMin/lastPrice)-1)*100>=0.1)
+    // console.log("Long",((lastPrice/tranformMin)-1)*100>=0.1)
+    if((change-1)*100 >= 1){
+        if(((tranformMax/lastPrice)-1)*100 >= 0.1){
             console.log("Bán đi chờ chi")
-        }if (((lastPrice/tranformMin)-1) >= 0.1) {
+        }if (((lastPrice/tranformMin)-1)*100 >= 0.1) {
             console.log("Mua đi chờ chi")
         } else {
             console.log("Bình tĩnh chờ thời")
