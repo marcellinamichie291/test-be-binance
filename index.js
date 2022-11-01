@@ -34,12 +34,12 @@ async function main(){
     const lastPrice = parseFloat(bPrice[bPrice.length - 1].close)
     // console.log('lastPrice:',lastPrice)
     // console.log('%', change -1 >= 1)
-    // console.log("Short", ((findMax/lastPrice)-1)>=0.1)
-    // console.log("Long",((lastPrice/findMin)-1)>=0.1)
+    // console.log("Short", ((tranformMin/lastPrice)-1)>=0.1)
+    // console.log("Long",((lastPrice/tranformMin)-1)>=0.1)
     if((change-1) >= 1){
-        if(((findMax/lastPrice)-1) >= 0.1){
+        if(((tranformMax/lastPrice)-1) >= 0.1){
             console.log("Bán đi chờ chi")
-        }if (((lastPrice/findMin)-1) >= 0.1) {
+        }if (((lastPrice/tranformMin)-1) >= 0.1) {
             console.log("Mua đi chờ chi")
         } else {
             console.log("Bình tĩnh chờ thời")
